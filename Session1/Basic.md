@@ -7,8 +7,7 @@
   - [III. Vòng lặp](#iii-vòng-lặp)
   - [IV. Các Colections trong Kotlin](#iv-các-colections-trong-kotlin)
   - [V. Null safety](#v-null-safety)
-  - [VII. Nhập xuất:](#vii-nhập-xuất)
-
+  - [VI. Nhập xuất:](#vi-nhập-xuất)
 
 ## I. Biến, kiểu dữ liệu
 
@@ -338,7 +337,7 @@ fun main() {
 ```
 -> Thay vì như lúc trước, khi `str` có giá trị null thì size sẽ được gán là null thì khi dùng toán tử Elvis, ta sẽ gán được giá trị của size = 0. Trong trường hợp `str` khác null thì cũng tương tự
   
-## VII. Nhập xuất:
+## VI. Nhập xuất:
 - Nhập
 ```kotlin
 import java.utils.Scanner
