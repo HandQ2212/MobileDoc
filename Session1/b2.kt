@@ -5,7 +5,6 @@ fun solve(n : Int){
     when(n){
         1 -> println(1)
         2, 3 -> println("No Solution")
-        4 -> println("2 4 1 3")
         else -> {
             println("YES")
             val result = mutableListOf<Int>()

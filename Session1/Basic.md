@@ -340,12 +340,12 @@ fun main() {
 ## VI. Nhập xuất:
 - Nhập
 ```kotlin
-import java.utils.Scanner
+import java.util.Scanner
 fun main() {
   val reader = Scanner(System.`in`)
 
-  val a = reader.toInt()
-  pritnln(a)
+  val a = reader.nextInt()
+  println(a)
 }
 ```
 - Xuất:
