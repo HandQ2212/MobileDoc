@@ -686,7 +686,6 @@ fun main() {
     val (name, age) = u2
     println("$name is $age years old")
 }
-
 ```
 
 - Yêu cầu:
