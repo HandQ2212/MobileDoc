@@ -85,6 +85,7 @@ class UserManager {
 ```
 ### b. Inheritance - Tính kế thừa
 - Tính kế thừa là việc tạo 1 class mới dựa trên 1 class đã có, khi đó class mới sẽ có thể sử dụng các properties hoặc methods của class được kế thừa. Ngoài ra class mới cũng có thể thêm các properties hoặc methods mới đặc trưng của nó.
+- Tất cả các class đều kế thừa từ class `Any`, trong class `Any` sẽ có 3 phương thức: `equals()` , `hashCode()` , `toString()`. Vì vậy các class sẽ đều có 3 phương thức này
 - Trong kotlin, các class mặc định ở `final` nghĩa là không thể kế thừa. Vì vậy, nếu dùng kế thừa thì class được kế thừa cần được đánh dấu `open` vào đằng trước class.
 - Single level Inheritance - Kế thừa 1 cấp: 1 class con kế thừa từ 1 class cha. Class con sẽ kế thừa các properties hoặc methods từ class cha.
 - Multiple level Inheritance - Kế thừa nhiều cấp: class ông > class bố > class con. Các properties hoặc methods trong class ông thì class con vẫn có thể sử dụng được.
@@ -101,14 +102,14 @@ open class Car(private val brand: String) : Vehicle() {
     }
 }
 
-class ElectricCar(private val brand: String,
+class ElectricCar(brand: String,
                   private val batteryCapacity: Int) : Car(brand) {
     fun charge() {
         println("Charging $brand with $batteryCapacity kWh battery")
     }
 }
 
-class GasCar(private val brand: String,
+class GasCar(brand: String,
              private val fuelTankSize: Int) : Car(brand) {
     fun refuel() {
         println("Refueling $brand with $fuelTankSize liters of gas.")
