@@ -114,11 +114,11 @@ fun main() {
         - **Star-projections**:
           - Star-projection (*) cho phép sử dụng kiểu generic mà không cần biết đối số kiểu cụ thể, nhưng vẫn đảm bảo an toàn kiểu dữ liệu.
           - Cách hoạt động:
-            - Foo<out T : TUpper> → Foo<*> tương đương Foo<out TUpper> → Có thể đọc giá trị kiểu TUpper.
-            - Foo<in T> → Foo<*> tương đương Foo<in Nothing> → Không thể ghi giá trị nào an toàn.
-            - Foo<T : TUpper> (invariant) → Foo<*> tương đương:
-              - Đọc như Foo<out TUpper>
-              - Ghi như Foo<in Nothing>   
+            - `Foo<out T : TUpper>` → Foo<*> tương đương Foo<out TUpper> → Có thể đọc giá trị kiểu TUpper.
+            - `Foo<in T> → Foo<*>`tương đương Foo<in Nothing> → Không thể ghi giá trị nào an toàn.
+            - `Foo<T : TUpper>` (invariant) → Foo<*> tương đương:
+              - Đọc như `Foo<out TUpper>`
+              - Ghi như `Foo<in Nothing>`
             - Với generic có nhiều tham số, mỗi tham số có thể chiếu độc lập, ví dụ:
                 ```kotlin
                 interface Function<in T, out R>
@@ -205,7 +205,7 @@ fun main() {
       return "$this $str2 $str3"
   }
   ```
-- Độ phân giải tích (Static Resolution):
+- Độ phân giải tĩnh (Static Resolution):
   - Các Extensions không thực sự thay đổi các class hoặc interface mà chỉ là mở rộng chúng, chỉ làm cho các hàm mới có thể được gọi được bằng dấu chấm trên các biến của kiểu này
   - Extension Function được phân phối tĩnh (static dispatched). Tức là Extension Function nào được gọi đã được biết tại thời điểm biên dịch trên kiểu khai báo của đối tượng nhận.
   ```kotlin
@@ -535,11 +535,10 @@ val evenOrNull = number.takeIf { it % 2 == 0 }
 val oddOrNull = number.takeUnless { it % 2 == 0 }
 println("even: $evenOrNull, odd: $oddOrNull")
 ```
-- Vì giá trị trả về của chúng có thể là null, bạn cần thực hiện kiểm tra null hoặc sử dụng safe call `(?.)` khi chuỗi các hàm khác sau `takeIf` và `takeUnless`
+- Vì giá trị trả về của chúng có thể là null, cần thực hiện kiểm tra null hoặc sử dụng safe call `(?.)` khi chuỗi các hàm khác sau `takeIf` và `takeUnless`
 ```kotlin
 val str = "Hello"
 val caps = str.takeIf { it.isNotEmpty() }?.uppercase()
 //val caps = str.takeIf { it.isNotEmpty() }.uppercase() //compilation error
 println(caps)
 ```
-
