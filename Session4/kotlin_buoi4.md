@@ -67,7 +67,7 @@ fun main() {
                 fatherObject = sonObject
             }
             ```
-          - Modifier `int` (contravariant):
+          - Modifier `in` (contravariant):
             - Dùng để đánh dấu tham số kiểu `<T>`là contravariant. Tức là chỉ được **consumed** (sử dụng) chứ không được **returned** (trả về).
             ```kotlin
             open class Father()
