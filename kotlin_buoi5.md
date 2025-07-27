@@ -1,4 +1,18 @@
 # Buổi 5: Object & Callback
+- [Buổi 5: Object \& Callback](#buổi-5-object--callback)
+  - [I. Object:](#i-object)
+    - [1. Object Declaration (Khai báo object):](#1-object-declaration-khai-báo-object)
+      - [a. Mục đích và cách sử dụng:](#a-mục-đích-và-cách-sử-dụng)
+      - [b. Data object:](#b-data-object)
+      - [c. Companion object:](#c-companion-object)
+    - [2. Object Expression (Biểu thức object):](#2-object-expression-biểu-thức-object)
+    - [3. Sự khác biệt:](#3-sự-khác-biệt)
+    - [4. Hình thái tương đương trong Java:](#4-hình-thái-tương-đương-trong-java)
+  - [II. Callback :](#ii-callback-)
+    - [1. High-order function:](#1-high-order-function)
+    - [2. Function type:](#2-function-type)
+    - [3. Lambda function:](#3-lambda-function)
+    - [4. Callback:](#4-callback)
 
 ## I. Object:
 - Object cho phép định nghĩa 1 class và khởi tạo 1 instance của lớp đó trong 1 bước duy nhất -> Hữu ích khi cần **1 thể hiện singleton có thể tái sử dụng** hoặc **1 đối tượng dùng 1 lần**.
