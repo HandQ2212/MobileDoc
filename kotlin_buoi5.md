@@ -121,6 +121,7 @@
 #### c. Companion object:
 - 1 khai báo Object Declaration bên trong 1 class được đánh dấu bằng từ khóa `companion`.
 - Các member được gọi bằng tên của class chứa object
+- 1 class chỉ có 1 companion object.
 ```kotlin
 class User(val name: String) {
     companion object Factory {
@@ -155,7 +156,7 @@ class User(val name: String) {
 }
 User("Nick").sayHi()
 ```
-- Mặc dù các member của `companion object` trong Kotlin trông giống như các thành viên `static` từ các ngôn ngữ khác, chúng thực sự là các instance members của chính `companion object` -> Vẫn có thể kế thừa, implement,...
+- Mặc dù các member của `companion object` trong Kotlin trông giống như các thành viên `static` từ các ngôn ngữ khác, chúng thực sự là các instance members của chính `companion object` -> Vẫn có thể kế thừa, implement,.... 
 ```kotlin
 interface Factory<T> {
     fun create(name: String): T
@@ -368,7 +369,7 @@ Nhận 1 function như 1 param **hoặc** có thể trả về 1 function:
   fun multiply2(a: Int, b: Int): Int = a * b
   ```
 ### 2. Function type:
-- Sử dụng các Function types (vdu: `(Int, Int) -> Double`) để đại diện cho các hàm. Tức là có thể khai báo biến hoặc tham số có kiểu là 1 hàm `val onClick() -> Unit = `
+- Sử dụng các Function types (vdu: `(Int, Int) -> Double`) để đại diện cho các hàm. Tức là có thể khai báo biến hoặc tham số có kiểu là 1 hàm `val onClick() -> Unit = {}`
 - Cú pháp:
   - `(A, B) -> C`: Nhận vào 2 đối số kiểu A, B và trả về kiểu C. Danh sách params có thể trống `() -> C`. Không thể bỏ qua kiểu trả về Unit như hàm bình thường `(A, B) -> Unit`. 
   ```kotlin
@@ -391,7 +392,37 @@ Nhận 1 function như 1 param **hoặc** có thể trả về 1 function:
   - Tùy chọn để tên tham số: `(x: Int, Int) -> Point`
   - Function type nullable: `((Int, Int) -> Int)?`
   - Kết hợp kiểu hàm: Các kiểu hàm cũng có thể được kết hợp bằng cách sử dụng dấu ngoặc đơn, ví dụ: (Int) -> ((Int) -> Unit)
+  ```kotlin
+  fun main() {
+      val f: (Int) -> ((Int) -> Unit) = { a ->
+          { b ->
+              println("Sum: ${a + b}")
+          }
+      }
+
+      val hamCon = f(5)
+      hamCon(3)
+
+      f(2)(7)
+  }
+  ```
   - Đặt tên thay thế cho 1 function type bằng cách sử dụng `typealias`: `typealias ClickHandler = (Button, ClickEvent) -> Unit`
+  ```kotlin
+  import java.awt.Button
+
+  typealias ClickHandler = (Button) -> Unit
+
+  fun handle(click: ClickHandler) {
+      val button = Button("Click me")
+      click(button)
+  }
+
+  fun main() {
+      handle { btn ->
+          println("Button ${btn.label} clicked")
+      }
+  }
+  ```
 - Khởi tạo instance của 1 `function type`:
   - Sử dụng khối mã bên trong 1 `function literal`, theo 1 trong 2 dạng sau:
     - Biểu thức lambda: 
@@ -429,6 +460,7 @@ Nhận 1 function như 1 param **hoặc** có thể trả về 1 function:
 - Lambda function là 1 dạng function literal (như trên). Chúng không có tên -> đgl Anonymous function.
 - Cú pháp đầy đủ:
 `val lambdaName: (paramsType) -> returnType = { argumentList -> functionBody }`
+- Lambda function dùng để gán cho 1 hàm bình thường chứ không thể khai báo như 1 hàm dưới dạng `fun`
 Ví dụ:
 ```kotlin
 fun main() {
@@ -444,9 +476,51 @@ fun main() {
 }
 ```
 - Tham số duy nhất (`it`): Nếu một biểu thức lambda chỉ có một tham số, tham số đó không cần được khai báo và toán tử -> có thể được bỏ qua. Tham số đó sẽ được khai định ngầm định dưới tên it. Ví dụ: `ints.filter { it > 0 }`
-- Dấu gạch dưới cho biến không sử dụng: Nếu một tham số lambda không được sử dụng, ta có thể đặt dấu gạch dưới `_` thay cho tên của nó. Ví dụ: `map.forEach { (_, value) -> println("$value!") }`
-- **Trailing Lambda** (Lambda cuối cùng): Theo quy ước Kotlin, nếu tham số cuối cùng của một hàm là một hàm (một kiểu hàm), thì biểu thức lambda được truyền làm đối số tương ứng có thể được đặt bên ngoài dấu ngoặc đơn của lời gọi hàm `items.fold(1) { acc, e -> acc * e }`
+```kotlin
+fun main() {
+    val sqr: (Int) -> Int = { it * it }
+    println(sqr(4))
+}
+```
+- Dấu gạch dưới cho biến không sử dụng: Nếu một tham số lambda không được sử dụng, ta có thể đặt dấu gạch dưới `_` thay cho tên của nó. Ví dụ: 
+```kotlin
+fun main() {
+    val map = mapOf("a" to 1, "b" to 2, "c" to 3)
+
+    map.forEach { (_, value) ->
+        println("Giá trị: $value")
+    }
+}
+```
+- **Trailing Lambda** (Lambda cuối cùng): Theo quy ước Kotlin, nếu tham số cuối cùng của một hàm là một hàm (một kiểu hàm), thì biểu thức lambda được truyền làm đối số tương ứng có thể được đặt bên ngoài dấu ngoặc đơn của lời gọi hàm 
+```kotlin
+fun main() {
+    val items = listOf(1, 2, 3, 4)
+
+    val tich = items.fold(1) { acc, e -> acc * e }
+
+    println("Tích: $tich")
+}
+```
 - Nếu lambda là đối số duy nhất trong lời gọi hàm đó, dấu ngoặc đơn có thể được bỏ qua hoàn toàn. Ví dụ: `run { println("...") }`.
+```kotlin
+fun <R> run(block: () -> R): R {
+    return block() 
+}
+
+fun main() {
+    run {
+        println("Run code block")
+    }
+
+    val thongBao = run {
+        val ten = "Hai"
+        "Xin chao, $ten!"
+    }
+
+    println(thongBao)
+}
+```
 - **Giá trị trả về:**
   - Không có return: Trả về dòng cuối của lambda
   - Return rõ ràng
@@ -457,7 +531,20 @@ fun main() {
     - Hành vi của return: Lệnh return không có nhãn bên trong một biểu thức lambda sẽ trả về từ hàm bao quanh (enclosing function), trong khi return bên trong một hàm ẩn danh sẽ trả về từ chính hàm ẩn danh đó
 
 ### 4. Callback:
-- Hàm callback là một hàm được truyền làm đối số cho một hàm khác. Trrong quá trình thực thi, hàm `callback` có thể được gọi vào thời điểm thích hợp
+- Hàm callback là một hàm được truyền làm đối số cho một hàm khác. Trong quá trình thực thi, hàm `callback` có thể được gọi vào thời điểm thích hợp. *(Phải gọi lại hàm truyền vào mới là callback)*
+- Hàm callback là ứng dụng của 1 function type. Muốn sử dụng lambda thì phải để callback ở vị trí cuối cùng.
+```kotlin
+fun doOperation(a: Int, b: Int, callback: (Int) -> Unit) {
+    val result = a + b
+    callback(result)
+}
+
+fun main() {
+    doOperation(5, 3) { result ->
+        println("Kết quả là: $result")
+    }
+}
+```
 - Phù hợp với các mục đích:
   - **Minh họa các khái niệm lập trình hàm** (Functional Programming): Trong lập trình hàm, **các hàm có thể được sử dụng giống như các biến**. Chúng ta có thể gán các hàm ẩn danh cho các biến
   - **Hàm bậc cao** (Higher-Order Functions): Chúng ta có thể truyền các hàm vào các hàm khác, tạo ra các hàm bậc cao
