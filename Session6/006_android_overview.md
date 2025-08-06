@@ -2,7 +2,7 @@
 - [Buổi 6: Android Overview](#buổi-6-android-overview)
   - [I. Android Overview](#i-android-overview)
     - [a. Hệ điều hành android và Android Studio](#a-hệ-điều-hành-android-và-android-studio)
-      - [1. Android OS:](#1-android-os)
+      - [1. Android:](#1-android)
       - [2. Android Studio:](#2-android-studio)
     - [b. Android folder project structure - Cấu trúc thư mục dự án Android:](#b-android-folder-project-structure---cấu-trúc-thư-mục-dự-án-android)
       - [1. manifests - Thư mục kê khai:](#1-manifests---thư-mục-kê-khai)
@@ -25,7 +25,7 @@
 
 ## I. Android Overview
 ### a. Hệ điều hành android và Android Studio
-#### 1. Android OS:
+#### 1. Android:
 - Android là hệ điều hành dựa trên Linux được thiết kế dành cho mobile device có màn hình cảm ứng như điện thoại thông minh và máy tính bảng. Android có mã nguồn mở.
 - Ngôn ngữ: Được viết bằng Java, Kotlin (UI), C (nhân), C++ và 1 số ngôn ngữ khác
 - Android được phát triển bởi Android Inc. với sự hỗ trợ tài chính từ Google và sau này được chính Google mua lại vào năm 2005.
@@ -272,6 +272,7 @@ Dùng để xác định màu nền của **View**
   - `android:textStyle`: xác định kiểu chữ `TextView`, có 3 giá trị là `normal` (thông thường), `bold` (in đậm), `ilalic` (nghiêng).
   - `android:background`: xác định màu nền TextView.
   - `android:drawableLeft/drawableRight/drawableTop/drawableBottom`: xác định drawable nằm bên trái/phải/trên/dưới văn bản.
+  - `padding, pl`
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
