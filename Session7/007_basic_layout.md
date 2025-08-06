@@ -1,4 +1,11 @@
 # Buổi 7: Basic Layout
+- [Buổi 7: Basic Layout](#buổi-7-basic-layout)
+  - [I. Layout:](#i-layout)
+    - [a. FrameLayout:](#a-framelayout)
+    - [b. RelativeLayout:](#b-relativelayout)
+    - [c. ConstraintLayout:](#c-constraintlayout)
+    - [d. LinearLayout:](#d-linearlayout)
+  - [II. ViewBinding:](#ii-viewbinding)
 
 ## I. Layout:
 
@@ -254,6 +261,8 @@
 ```
 
 ## II. ViewBinding:
+- Các layout cần viết thường, không cách, nếu có dùng `_`. Vdu: `activity_main.xml`. Khi ấy view binding sẽ generate ra 1 class với tên kiểu pascal: `ActivityMain` bao gồm 1 property cho mọi view với Id trong layout.
+- Phần tử gốc của layout luôn được lưu trữ trong 1 property được gọi là **root** (được tạo tự động). Trong một phương thức `onCreate` của **Activity**, pass `root` đến `setContentView` để báo cho **Activity** sử dụng layout từ **binding object**.
 - Thiết lập:  Vào `build.gradle.kts (Module :App)`. Tạo mới `buildFeatures` và set `viewBinding = true`. Sau đó sync now
 - Cách sử dụng:
     - Trong MainActivity class, tạo `private lateinit var binding: <Tên fileXML viết liền, viết hoa chữ cái đầu>Binding>`
