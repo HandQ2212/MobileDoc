@@ -32,7 +32,7 @@
 ![](https://freetuts.net/upload/tut_post/images/2020/02/28/2219/1.png)
 
 - Cách định vị View trong RelativeLayout:
-- 
+
 | **Thuộc tính**                     | **Mô tả**                                                                                    |
 | ---------------------------------- | -------------------------------------------------------------------------------------------- |
 | `android:layout_alignParentBottom` | Nếu `true`, làm cạnh dưới của view này kết nối với cạnh dưới của view cha.                   |
@@ -65,8 +65,8 @@
 | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
 | `app:layout_constraintTop_toTopOf/toBottomOf`    | Ràng buộc cạnh trên của view này vào **cạnh trên**/**cạnh dưới** của view khác        |
 | `app:layout_constraintBottom_toBottomOf/toTopOf` | Ràng buộc cạnh dưới của view này vào **cạnh dưới**/**cạnh trên** của view khác        |
-| layout_constraintLeft_toLeftOf/toRightOf         | Ràng buộc cạnh trái của phần tử tới bên **trái/phải** của view khác                   |
-| layout_constraintRight_toLeftOf/toRightOf        | Ràng buộc cạnh phải của phần tử tới cạnh **trái/phải** của view khác                  |
+| `layout_constraintLeft_toLeftOf/toRightOf`         | Ràng buộc cạnh trái của phần tử tới bên **trái/phải** của view khác                   |
+| `layout_constraintRight_toLeftOf/toRightOf   `     | Ràng buộc cạnh phải của phần tử tới cạnh **trái/phải** của view khác                  |
 | `app:layout_constraintStart_toStartOf/toEndOf`   | Ràng buộc cạnh **trái (start)** của view này vào cạnh **trái**/**phải** của view khác |
 | `app:layout_constraintEnd_toEndOf/toStartOf`     | Ràng buộc cạnh phải vào cạnh **phải**/**trái** của view khác                          |
 
@@ -269,6 +269,7 @@
     - Sử dụng `inflate(layoutInflater)` để khởi tạo binding
     - Sử dụng `binding.<Tên view>` để truy cập tới view đó, kết hợp với `setOnclickListener()` để thực hiện thao tác với view đó
 - Ví dụ
+
 MainActivity.kt
 ```kotlin
 package com.example.testapp
@@ -293,6 +294,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 activity_main.xml
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
