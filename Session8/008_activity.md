@@ -1,8 +1,8 @@
 # Buổi 8: Activity
 - [Buổi 8: Activity](#buổi-8-activity)
   - [I. Foreground \& Background Application:](#i-foreground--background-application)
-    - [a. **Định nghĩa:**](#a-định-nghĩa)
-    - [b. **Điều kiện:**](#b-điều-kiện)
+    - [a. Định nghĩa:](#a-định-nghĩa)
+    - [b. Điều kiện:](#b-điều-kiện)
     - [c. Sơ đồ trạng thái của 1 ứng dụng:](#c-sơ-đồ-trạng-thái-của-1-ứng-dụng)
     - [d. Vòng đời của 1 application:](#d-vòng-đời-của-1-application)
   - [II. Context, Activity:](#ii-context-activity)
@@ -53,7 +53,7 @@ Nếu không đáp ứng các điều kiện trên, thì ứng dụng được x
 ```bash
  +------------------------+
  |    Ứng dụng KHÔNG chạy |
- | (Killed / Not running)|
+ | (Killed / Not running) |
  +-----------+------------+
              |
              | Người dùng khởi động app
@@ -101,7 +101,7 @@ Nếu không đáp ứng các điều kiện trên, thì ứng dụng được x
   - LRU hay Least Recently Used Cache là bộ đệm được HĐH Android sử dụng để đẩy các ứng dụng ít được sử dụng nhất trong thời gian gần. 
   - Ví dụ: nếu bạn đang chạy ứng dụng âm nhạc cùng với ứng dụng Email, Facebook, Instagram và Whatsapp thì ứng dụng mà bạn không sử dụng trong một thời gian dài sẽ được đặt ở vị trí đầu của bộ đệm và ứng dụng được sử dụng gần đây sẽ được đặt ở phía sau của hàng đợi bộ đệm LRU.
   - Ngoài ra, nếu ứng dụng được khởi động lại hoặc mở lại, thì nó sẽ được đặt lại ở phía sau trong hàng đợi của bộ đệm.
-![](![alt text](image.png))
+![alt text](image.png)
 - Độ ưu tiên của Android Application:
   - Android gán mức ưu tiên cho tiến trình ứng dụng dựa trên trạng thái hoạt động, nhằm tối ưu **bộ nhớ** và **pin**. Thứ tự ưu tiên từ **cao → thấp**:
 
@@ -349,6 +349,8 @@ startActivity(intent)
 | singleInstance | Luôn riêng task            | `onNewIntent()` |
 
 ---
+
+singleTask + documentLaunchMode.
 
 ## III. Intent:
 ### a. Intent
