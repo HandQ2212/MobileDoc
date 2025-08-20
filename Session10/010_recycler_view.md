@@ -295,15 +295,16 @@
 <details>
     <summary>Adapter</summary>
     <ul>
-    - Là nơi nhận vào dữ liệu để hiển thị lên màn hình người dùng
-    - Là 1 class kế thừa từ <code>RecyclerView.Adapter</code>
-    </ul>
+    - Là nơi nhận vào dữ liệu để hiển thị lên màn hình người dùng    </ul>
+    <ul>- Là 1 class kế thừa từ <code>RecyclerView.Adapter</code></ul>
 </details>
 
 <details>
     <summary>ViewHolder</summary>
     <ul>
     - Là 1 helper class, nó sẽ giúp ta vẽ UI cho từng item mà chúng ta đẩy lên màn hình. Tất cả các tác vụ binding của views sẽ diễn ra ở đây. 
+    </ul>
+    <ul>
     - Nó là 1 subclass của <code>RecyclerView.ViewHolder</code>
     </ul>
 </details>
@@ -312,6 +313,8 @@
     <summary>ItemAnimator</summary>
     <ul>
     - <code>RecyclerView.ItemAnimator</code> là 1 class dùng để thêm hiệu ứng khi thay đổi các phần tử trong <b>RecyclerView</b>. Khi thêm/xóa phần tử trong RecyclerView, nó sẽ xử lý các hiệu ứng chuyển động của các phần tử này, giúp tạo ra các animation hợp mắt người dùng hơn.
+    </ul>
+    <ul>
     - <code>DefaultItemAnimator</code>: Là ItemAnimator mặc định khi không cung cấp ItemAnimator nào. Nó cung cấp các hiệu ứng mặc định khi thêm/xóa và update các phần tử
     </ul>
 </details>
@@ -360,6 +363,7 @@
     - `onCreateViewHolder(ViewGroup parent, int viewType)`: dựa vào viewType để inflate đúng layout.
     - `onBindViewHolder(holder, position)`: gán dữ liệu tương ứng với loại layout đó.
 - Ví dụ về trạng thái của tin nhắn:
+
 
 Model `Message`
 ```kotlin
