@@ -75,16 +75,12 @@
 ## II. SQL & MySQL:
 1 số khái niệm cần nắm trước:
 - **CSDL** là tập hợp dữ liệu có cấu trúc được lưu trữ và truy cập từ hệ thống máy tính.
-- **Truy vấn CSDL** được hiểu đơn giản là một **bộ lọc** có khả năng thu thập thông tin từ nhiều bảng trong một hệ CSDL và thiết lập các các tiêu c-  
-- hí để hệ quản trị CSDL thích hợp.
-- ### a. SQL:
-- 
-- - **SQL** là viết tắt của **Structured Query Language**, nghĩa là ngôn ngữ truyn CSDL
-- 
+- **Truy vấn CSDL** được hiểu đơn giản là một **bộ lọc** có khả năng thu thập thông tin từ nhiều bảng trong một hệ CSDL và thiết lập các các tiêu chí để hệ quản trị CSDL thích hợp.
+### a. SQL:
+- **SQL** là viết tắt của **Structured Query Language**, nghĩa là ngôn ngữ truyn CSDL
 - Ngôn ngữ SQL là ngôn ngữ chung mà tất cả các hệ thống dữ liệu quan   
 - RDBMS) nào g phải đáp ứng. 
-- Gồm 2 thành phần-:
-- 
+- Gồm 2 thành phần:
   - **Bảng SQL**: bao gồm các hàng và cột, tạo ra relationship giữa nhiều bảng dữ liệu đối ưu không gian lưu trữ.
   - **Câu lệnh SQL**: câu lệnh hướng dẫn để hệ thống quản lý CSDL hiểu được.
 ### b. MySQL:
