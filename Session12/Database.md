@@ -34,10 +34,10 @@
 - Trong **CSDL quan hệ**, các thành phần chính là:
   - **Table: bảng dữ liệu**
     - Đây là thành phần chính trong CSDL quan hệ. Ở bảng dữ liệu sẽ chứa các thông tin như:
-    -     ![alt text](image.png)
+     ![alt text](image.png)
     Với:
-    - 
-  -    - **Field (Cột/Trường)**: là trường dữ liệu thể hiện các thuộc tính của bảng. Chẳng hạn như: tên, địa chỉ…vv   - **Row (dòng)**: là dòng dữ liệu gồm các thông tin dữ liệu liên quan với nhau gọi là bảng record (bảng ghi).
+
+       - **Field (Cột/Trường)**: là trường dữ liệu thể hiện các thuộc tính của bảng. Chẳng hạn như: tên, địa chỉ…vv   - **Row (dòng)**: là dòng dữ liệu gồm các thông tin dữ liệu liên quan với nhau gọi là bảng record (bảng ghi).
       - **Cell (ô)**: là các ô giao giữa các dòng và cột là nơi để chứa các dữ liệu.
       - **Primary Key (Khóa chính)**: là một hoặc nhiều trường được gộp lại để định nghĩa bảng ghi. **Không được trùng và cũng không được để trống**. Tức là giá trị 1 của trường customer ID thể hiện cho tất cả dữ liệu của dòng đầu tiên.
   
