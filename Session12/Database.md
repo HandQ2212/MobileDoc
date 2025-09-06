@@ -36,9 +36,10 @@
 - Trong **CSDL quan hệ**, các thành phần chính là:
   - **Table: bảng dữ liệu**
     - Đây là thành phần chính trong CSDL quan hệ. Ở bảng dữ liệu sẽ chứa các thông tin như:
-    ![alt text](image.png)
+     ![alt text](image.png)
     Với:
-      - **Field (Cột/Trường)**: là trường dữ liệu thể hiện các thuộc tính của bảng. Chẳng hạn như: tên, địa chỉ…vv   - **Row (dòng)**: là dòng dữ liệu gồm các thông tin dữ liệu liên quan với nhau gọi là bảng record (bảng ghi).
+
+       - **Field (Cột/Trường)**: là trường dữ liệu thể hiện các thuộc tính của bảng. Chẳng hạn như: tên, địa chỉ…vv   - **Row (dòng)**: là dòng dữ liệu gồm các thông tin dữ liệu liên quan với nhau gọi là bảng record (bảng ghi).
       - **Cell (ô)**: là các ô giao giữa các dòng và cột là nơi để chứa các dữ liệu.
       - **Primary Key (Khóa chính)**: là một hoặc nhiều trường được gộp lại để định nghĩa bảng ghi. **Không được trùng và cũng không được để trống**. Tức là giá trị 1 của trường customer ID thể hiện cho tất cả dữ liệu của dòng đầu tiên.
   
@@ -78,9 +79,9 @@
 - **CSDL** là tập hợp dữ liệu có cấu trúc được lưu trữ và truy cập từ hệ thống máy tính.
 - **Truy vấn CSDL** được hiểu đơn giản là một **bộ lọc** có khả năng thu thập thông tin từ nhiều bảng trong một hệ CSDL và thiết lập các các tiêu chí để hệ quản trị CSDL thích hợp.
 ### a. SQL:
-- **SQL** là viết tắt của **Structured Query Language**, nghĩa là ngôn ngữ truyền CSDL
+- **SQL** là viết tắt của **Structured Query Language**, nghĩa là ngôn ngữ truyn CSDL
 - Ngôn ngữ SQL là ngôn ngữ chung mà tất cả các hệ thống dữ liệu quan   
-(RDBMS) nào g phải đáp ứng. 
+- RDBMS) nào g phải đáp ứng. 
 - Gồm 2 thành phần:
   - **Bảng SQL**: bao gồm các hàng và cột, tạo ra relationship giữa nhiều bảng dữ liệu đối ưu không gian lưu trữ.
   - **Câu lệnh SQL**: câu lệnh hướng dẫn để hệ thống quản lý CSDL hiểu được.
