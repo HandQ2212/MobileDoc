@@ -2,6 +2,7 @@
 - [Buổi 12: CSDL \& MySQL](#buổi-12-csdl--mysql)
   - [I. CSDL](#i-csdl)
   - [II. SQL \& MySQL:](#ii-sql--mysql)
+    - [a. SQL:](#a-sql)
     - [b. MySQL:](#b-mysql)
   - [III. Database \& Table trong MySQL:](#iii-database--table-trong-mysql)
     - [a. Database:](#a-database)
@@ -17,6 +18,7 @@
     - [4. ORDER BY](#4-order-by)
     - [5. GROUP BY](#5-group-by)
     - [6. HAVING](#6-having)
+    - [7. Thứ tự:](#7-thứ-tự)
   - [VI. Các loại JOIN:](#vi-các-loại-join)
     - [a. INNER JOIN:](#a-inner-join)
     - [b. LEFT JOIN:](#b-left-join)
@@ -34,10 +36,9 @@
 - Trong **CSDL quan hệ**, các thành phần chính là:
   - **Table: bảng dữ liệu**
     - Đây là thành phần chính trong CSDL quan hệ. Ở bảng dữ liệu sẽ chứa các thông tin như:
-    -     ![alt text](image.png)
+    ![alt text](image.png)
     Với:
-    - 
-  -    - **Field (Cột/Trường)**: là trường dữ liệu thể hiện các thuộc tính của bảng. Chẳng hạn như: tên, địa chỉ…vv   - **Row (dòng)**: là dòng dữ liệu gồm các thông tin dữ liệu liên quan với nhau gọi là bảng record (bảng ghi).
+      - **Field (Cột/Trường)**: là trường dữ liệu thể hiện các thuộc tính của bảng. Chẳng hạn như: tên, địa chỉ…vv   - **Row (dòng)**: là dòng dữ liệu gồm các thông tin dữ liệu liên quan với nhau gọi là bảng record (bảng ghi).
       - **Cell (ô)**: là các ô giao giữa các dòng và cột là nơi để chứa các dữ liệu.
       - **Primary Key (Khóa chính)**: là một hoặc nhiều trường được gộp lại để định nghĩa bảng ghi. **Không được trùng và cũng không được để trống**. Tức là giá trị 1 của trường customer ID thể hiện cho tất cả dữ liệu của dòng đầu tiên.
   
@@ -62,7 +63,7 @@
   - 
   - **CSDL phi quan hệ (NoSQL)**: Được thiết kế để xử lý khối lượng  dữ liệu phi cấu trúc, như dữ liệu từ mạng xã hội hay các ứng dụng di động. Ví dụ: MongoDB, Cassandra.
   - **CSDL đám mây (Cloud Database)**: Được lưu trữ trên nền tảng đám mây, cho phép truy cập dữ liệu từ bất kỳ đâu có internet. Ví dụ: Google Cloud SQL, Amazon RDS.
-  - **CSDL phân tán (Distributed Database)**: Lưu trữ dữ liệu trên nhiều máy chủ khác nhau, giúp tăng cường khả năng chịu tải và dự phòng.
+  - **CSDL phân tán (Distributed Database)**: Lưu trữ  dữ liệu trên nhiều máy chủ khác nhau, giúp tăng cường khả năng chịu tải và dự phòng.
 
 - Các thành phần chính trong CSDL:
   - **Bảng (Table)**: Đây là như là 1 chiếc hộp để chứa dữ liệu, mỗi bảng sẽ là 1 tập hợp các thông tin liên quan
@@ -75,16 +76,12 @@
 ## II. SQL & MySQL:
 1 số khái niệm cần nắm trước:
 - **CSDL** là tập hợp dữ liệu có cấu trúc được lưu trữ và truy cập từ hệ thống máy tính.
-- **Truy vấn CSDL** được hiểu đơn giản là một **bộ lọc** có khả năng thu thập thông tin từ nhiều bảng trong một hệ CSDL và thiết lập các các tiêu c-  
-- hí để hệ quản trị CSDL thích hợp.
-- ### a. SQL:
-- 
-- - **SQL** là viết tắt của **Structured Query Language**, nghĩa là ngôn ngữ truyn CSDL
-- 
+- **Truy vấn CSDL** được hiểu đơn giản là một **bộ lọc** có khả năng thu thập thông tin từ nhiều bảng trong một hệ CSDL và thiết lập các các tiêu chí để hệ quản trị CSDL thích hợp.
+### a. SQL:
+- **SQL** là viết tắt của **Structured Query Language**, nghĩa là ngôn ngữ truyền CSDL
 - Ngôn ngữ SQL là ngôn ngữ chung mà tất cả các hệ thống dữ liệu quan   
-- RDBMS) nào g phải đáp ứng. 
-- Gồm 2 thành phần-:
-- 
+(RDBMS) nào g phải đáp ứng. 
+- Gồm 2 thành phần:
   - **Bảng SQL**: bao gồm các hàng và cột, tạo ra relationship giữa nhiều bảng dữ liệu đối ưu không gian lưu trữ.
   - **Câu lệnh SQL**: câu lệnh hướng dẫn để hệ thống quản lý CSDL hiểu được.
 ### b. MySQL:
@@ -301,6 +298,9 @@ FROM Course
 GROUP BY CourseName
 HAVING AVG(Credits) > 3;
 ```
+
+### 7. Thứ tự:
+`FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY, LIMIT`
 
 ## VI. Các loại JOIN:
 Giả sử chúng ta có 2 bảng Student & CourseEnrollment:
