@@ -457,7 +457,6 @@ interface UserDao {
   - 3 phương thức đầu ta không cần phải thêm các câu lệnh SQL vào trong nữa bởi nó đã có sẵn, đôi lúc sẽ có những thuộc tính thêm thì mới viết vào
   - `@Query` cho phép ghi các câu lệnh SQL và hiển thị chúng dưới dạng các method của DAO. Ví dụ ở trên là lấy hết tất cả users.
 - Chi tiết về `@Query`:
-Dưới đây mình đã viết lại phần tài liệu mà ta gửi thành dạng **Markdown** rõ ràng, dễ đọc hơn, kèm theo một số cải tiến (cấu trúc mục, highlight code, ghi chú quan trọng).
   - **Trả về một tập hợp nhỏ các cột của bảng**:
 
     Trong thường hợp ta chỉ cần truy cập tới 1 số cột của table, ta sẽ làm như sau:

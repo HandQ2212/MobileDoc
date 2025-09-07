@@ -81,7 +81,7 @@
 ### a. SQL:
 - **SQL** là viết tắt của **Structured Query Language**, nghĩa là ngôn ngữ truyn CSDL
 - Ngôn ngữ SQL là ngôn ngữ chung mà tất cả các hệ thống dữ liệu quan   
-- RDBMS) nào g phải đáp ứng. 
+- RDBMS) nào g phải đáp ứng.  
 - Gồm 2 thành phần:
   - **Bảng SQL**: bao gồm các hàng và cột, tạo ra relationship giữa nhiều bảng dữ liệu đối ưu không gian lưu trữ.
   - **Câu lệnh SQL**: câu lệnh hướng dẫn để hệ thống quản lý CSDL hiểu được.
